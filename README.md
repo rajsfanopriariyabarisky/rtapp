@@ -1,66 +1,263 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Living RT
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A web-based neighborhood administration system built with Laravel to streamline resident management, administrative services, announcements, complaints, payments, and RT/RW operational workflows.
 
-## About Laravel
+The application centralizes common neighborhood administrative processes into a single platform, providing structured access for administrators and residents.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Overview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Living RT was developed to reduce manual administrative work commonly found in neighborhood management.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The system provides functionality for managing resident information, processing administrative requests, publishing announcements, handling complaints, monitoring account approvals, and supporting payment workflows.
 
-## Learning Laravel
+The project follows Laravel's MVC architecture and uses MySQL/MariaDB for persistent data storage.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Key Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Resident Management
+- Manage resident and family member information
+- Create, update, and maintain resident records
+- Organize resident-related administrative data
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Administrative Letters
+- Submit administrative letter requests
+- Review and approve submitted requests
+- Track request status and approval information
 
-## Laravel Sponsors
+### Complaint Management
+- Submit complaints or reports
+- Review and respond to complaints
+- Track complaint status and responses
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Announcement Management
+- Publish community announcements
+- Manage information distributed to residents
 
-### Premium Partners
+### Family Approval
+- Submit family-related approval requests
+- Review and approve submitted information
+- Track approval status
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Payment Management
+- Manage resident payment records
+- Support online payment workflows through Midtrans integration
 
-## Contributing
+### Authentication and Access Control
+- User authentication
+- Role-based access
+- Account approval workflow
+- Protected administrative pages
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Administrative Dashboard
+- Centralized access to RT administrative functions
+- Account approval monitoring
+- Navigation for resident, letter, complaint, and payment management
 
-## Code of Conduct
+## Tech Stack
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Technology | Usage |
+|---|---|
+| Laravel | Backend framework |
+| PHP | Server-side application logic |
+| MySQL / MariaDB | Relational database |
+| Blade | Server-side templating |
+| JavaScript | Client-side interaction |
+| CSS | User interface styling |
+| Vite | Frontend asset bundling |
+| Font Awesome | Interface icons |
+| Midtrans | Payment gateway integration |
+| Composer | PHP dependency management |
+| NPM | Frontend dependency management |
 
-## Security Vulnerabilities
+## Architecture
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+The application follows Laravel's MVC architecture:
 
-## License
+```text
+app/
+├── Http/
+│   └── Controllers/
+├── Models/
+└── Providers/
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+database/
+├── factories/
+├── migrations/
+└── seeders/
+
+resources/
+├── css/
+├── js/
+└── views/
+
+routes/
+```
+
+Database schema changes are managed through Laravel migrations, while seeders and factories are used to generate development data.
+
+## Local Installation
+
+### Requirements
+
+Make sure the following are installed:
+
+- PHP
+- Composer
+- MySQL or MariaDB
+- Node.js
+- NPM
+
+### Clone the repository
+
+```bash
+git clone https://github.com/rajsfanopriariyabarisky/rtapp.git
+cd rtapp
+```
+
+### Install backend dependencies
+
+```bash
+composer install
+```
+
+### Install frontend dependencies
+
+```bash
+npm install
+```
+
+### Configure the environment
+
+Create a local environment file:
+
+```bash
+cp .env.example .env
+```
+
+On Windows:
+
+```bash
+copy .env.example .env
+```
+
+Generate the Laravel application key:
+
+```bash
+php artisan key:generate
+```
+
+### Configure the database
+
+Create a MySQL or MariaDB database and update the following values in `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Run the migrations:
+
+```bash
+php artisan migrate
+```
+
+Seed development data if required:
+
+```bash
+php artisan db:seed
+```
+
+### Configure Midtrans
+
+Add your own Midtrans credentials:
+
+```env
+MIDTRANS_SERVER_KEY=
+MIDTRANS_CLIENT_KEY=
+MIDTRANS_IS_PRODUCTION=false
+```
+
+Never commit production credentials or secret keys to the repository.
+
+### Run the application
+
+Start Laravel:
+
+```bash
+php artisan serve
+```
+
+Start the frontend development server in a separate terminal:
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Production Build
+
+Build frontend assets with:
+
+```bash
+npm run build
+```
+
+Clear Laravel caches when required:
+
+```bash
+php artisan optimize:clear
+```
+
+## Security
+
+Sensitive configuration is stored in `.env` and is excluded from version control.
+
+Credentials such as database passwords, SMTP credentials, API keys, and payment gateway secrets should never be stored directly in the source code.
+
+## Screenshots
+
+Screenshots of the application interface can be added here.
+
+Recommended examples:
+
+- Login page
+- RT dashboard
+- Resident management
+- Letter management
+- Complaint management
+- Payment management
+
+Example:
+
+```markdown
+![RT Dashboard](docs/images/dashboard.png)
+```
+
+## Engineering Highlights
+
+This project demonstrates practical experience with:
+
+- Laravel MVC architecture
+- Relational database design
+- Authentication and role-based access control
+- CRUD application development
+- Laravel migrations and seeders
+- Eloquent ORM relationships
+- Blade component development
+- Payment gateway integration
+- Frontend asset management with Vite
+- Git-based development workflow
+
+## Repository
+
+GitHub:  
+https://github.com/rajsfanopriariyabarisky/rtapp
