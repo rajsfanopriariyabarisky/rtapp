@@ -1,13 +1,21 @@
-FROM php:8.2-cli
+FROM debian:bookworm-slim
 
-RUN apt-get update && apt-get install -y \
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    php8.2-cli \
+    php8.2-mysql \
+    php8.2-mbstring \
+    php8.2-xml \
+    php8.2-curl \
+    php8.2-zip \
+    php8.2-bcmath \
+    php8.2-gd \
+    composer \
     git \
     unzip \
-    libzip-dev \
-    && docker-php-ext-install pdo_mysql \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
-
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
@@ -15,6 +23,7 @@ COPY . .
 
 RUN composer install \
     --no-dev \
+    --prefer-dist \
     --optimize-autoloader \
     --no-interaction \
     --no-scripts
