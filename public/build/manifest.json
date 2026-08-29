@@ -16,17 +16,17 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CGWu4lMI.css",
+    "file": "assets/app-BeCrGHFR.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-DR9qa_jT.js",
+    "file": "assets/app-BWsM-xB8.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-0EWH5Bk1.css"
+      "assets/app-BakEamE6.css"
     ]
   }
 }
